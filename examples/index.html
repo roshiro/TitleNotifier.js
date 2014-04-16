@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Title Notifier.js Example Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Show number of unread notifications in page's title">
+    <meta name="author" content="Rafael Oshiro">
+
+    <!-- Title Notifier JS file  -->
+    <script src="../title_notifier.js"></script>
+  </head>
+
+  <body>
+
+    <input type="button" id="add_btn" value="+1 notification"/>
+    <br><br>
+    <input type="button" id="sub_btn" value="-1 notification"/>
+    <br><br>
+    <input type="text" id="number_notification" value="10"/><input type="button" id="set_btn" value="Set total"/>
+    <br><br>
+    <input type="button" id="res_btn" value="reset"/>
+
+    <script>
+      var addButton = document.getElementById('add_btn'),
+          subButton = document.getElementById('sub_btn'),
+          setButton = document.getElementById('set_btn'),
+          resButton = document.getElementById('res_btn');
+
+      addButton.onclick = function() {
+        titlenotifier.add();
+      };
+
+      subButton.onclick = function() {
+        titlenotifier.sub();
+      };
+
+      setButton.onclick = function() {
+        var value = document.getElementById('number_notification');
+        titlenotifier.set(value.value);
+      };
+
+      resButton.onclick = function() {
+        titlenotifier.reset();
+      };
+    </script>
+
+  </body>
+</html>
