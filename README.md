@@ -2,10 +2,35 @@
 
 Lightweight, dependency-free javascript library to dinamically show the number of unread notifications in your webpage title.
 
-### Usage
+## Usage
 
-TODO
+Add title_notifier.js to your webpage.
 
-### Contribute
+`<script src="title_notifier.js"></script>`
 
-TODO
+##### Adding Notifications
+
+![Adding notification](http://www.frontendjournal.com/wp-content/uploads/2014/04/notification_total_3.png)
+
+Call the following function to add +1 to notifications total.
+`titlenotifier.add();`
+
+##### Subtracting Notifications
+
+![Subtracting notification](http://www.frontendjournal.com/wp-content/uploads/2014/04/notification_total_2.png)
+
+Call the following to subtract 1 from the total notifications.
+`titlenotifier.sub();`
+
+##### Reset Notifications
+
+![resetting notification](http://www.frontendjournal.com/wp-content/uploads/2014/04/notification_total_zero.png)
+
+Call the following to set notifications to zero and the title to the original version.
+
+`titlenotifier.reset();`
+
+
+## Contribute
+
+Contributions are welcome.
