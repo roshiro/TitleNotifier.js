@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TitleNotifier unit tests</title>
+  <script src="../title_notifier.js"></script>
+  <script src="evidence.js"></script>
+</head>
+<body>
+  <h1>TitleNotifier unit tests</h1>
+  <p>
+    See the browser console for results.
+  </p>
+
+  <script>
+    function getTitle(){
+      return document.getElementsByTagName('title')[0].text;
+    }
+
+    function expectedTitle(number) {
+      if(number > 0) {
+        return "("+ number +") TitleNotifier unit tests";
+      } else {
+        return "TitleNotifier unit tests";
+      }
+    }
+
+    Evidence.TestCase.extend('TitleNotifierTest', {
+      testAdd: function(t){
+        titlenotifier.reset();
+        titlenotifier.add();
+        t.assertEqual(getTitle(), expectedTitle(1));
+      },
+      testAddWithParam: function(t) {
+        titlenotifier.reset();
+        titlenotifier.add(10);
+        t.assertEqual(getTitle(), expectedTitle(10));
+      },
+      testSub: function(t) {
+        titlenotifier.reset();
+        titlenotifier.add(10);
+        titlenotifier.sub();
+        t.assertEqual(getTitle(), expectedTitle(9));
+      },
+      testSubWithParam: function(t) {
+        titlenotifier.reset();
+        titlenotifier.add(10);
+        titlenotifier.sub(2);
+        t.assertEqual(getTitle(), expectedTitle(8));
+      },
+      testSubWhenParamGreaterThanTotal: function(t) {
+        titlenotifier.reset();
+        titlenotifier.set(1);
+        titlenotifier.sub(2);
+        t.assertEqual(getTitle(), expectedTitle(0));
+      },
+      testSet: function(t) {
+        titlenotifier.reset();
+        titlenotifier.set();
+        t.assertEqual(getTitle(), expectedTitle(0));
+      },
+      testSetWithParam: function(t) {
+        titlenotifier.reset();
+        titlenotifier.set(5);
+        t.assertEqual(getTitle(), expectedTitle(5));
+      }
+    });
+  </script>
+</body>
+</html>
