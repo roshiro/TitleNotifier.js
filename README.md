@@ -6,31 +6,39 @@ Lightweight (< 3Kb), dependency-free javascript library to dynamically show the 
 
 Add title_notifier.js to your webpage.
 
-`<script src="title_notifier.js"></script>`
+```javascript
+<script src="title_notifier.js"></script>
+```
 
-##### Adding Notifications
+### Adding Notifications
 
 ![Adding notification](http://www.frontendjournal.com/wp-content/uploads/2014/04/notification_total_3.png)
 
 Call the following function to add +1 to notifications total.
 
-`titlenotifier.add();`
+```javascript
+titlenotifier.add();
+```
 
-##### Subtracting Notifications
+### Subtracting Notifications
 
 ![Subtracting notification](http://www.frontendjournal.com/wp-content/uploads/2014/04/notification_total_2.png)
 
 Call the following to subtract 1 from the total notifications.
 
-`titlenotifier.sub();`
+```javascript
+titlenotifier.sub();
+```
 
-##### Reset Notifications
+### Reset Notifications
 
 ![resetting notification](http://www.frontendjournal.com/wp-content/uploads/2014/04/notification_total_zero.png)
 
 Call the following to set notifications to zero and the title to the original version.
 
-`titlenotifier.reset();`
+```javascript
+titlenotifier.reset();
+```
 
 
 ## Contribute
