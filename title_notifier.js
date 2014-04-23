@@ -4,7 +4,7 @@
  * Copyright 2014 Rafael Oshiro.
  * http://www.frontendjournal.com
  *
- * Lightweight, dependency-free javascript library to dinamically
+ * Lightweight, dependency-free javascript library to dynamically
  * show the number of unread notifications in your webpage title.
  *
  * https://github.com/roshiro/TitleNotifier.js
