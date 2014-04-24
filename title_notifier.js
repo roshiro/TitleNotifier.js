@@ -10,7 +10,7 @@
  * https://github.com/roshiro/TitleNotifier.js
  * ========================================================== */
 
-(function() {
+;(function() {
   var title = document.getElementsByTagName('title')[0],
       notificationTotal = 0,
       patt = /\(\d*\) /;
@@ -68,7 +68,7 @@
       } else if(value > notificationTotal) {
         notificationTotal = 0;
       } else {
-        notificationTotal -= parseInt(value,10);  
+        notificationTotal -= parseInt(value,10);
       }
 
       updateTitle();
