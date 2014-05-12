@@ -13,7 +13,7 @@
 ;(function() {
   var title = document.getElementsByTagName('title')[0],
       notificationTotal = 0,
-      patt = /\(\d*\) /;
+      patt = /^\(\d*\) /;
 
   function updateTitle() {
     if(notificationTotal === 0) {
