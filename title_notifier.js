@@ -94,7 +94,14 @@
     reset: function() {
       notificationTotal = 0;
       updateTitle();
-    }
+    },
+
+    /**
+     * Returns the value of notifications
+     */
+    get: function() {
+      return notificationTotal;
+    },
 
   }
 
