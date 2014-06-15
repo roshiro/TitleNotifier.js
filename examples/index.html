@@ -21,6 +21,8 @@
     <br><br>
     <input type="text" id="number_notification" value="10"/><input type="button" id="set_btn" value="Set total"/>
     <br><br>
+    <input type="text" id="max_notification" value="10"/><input type="button" id="max_btn" value="Set maximum"/>
+    <br><br>
     <input type="button" id="res_btn" value="reset"/>
 
     <script>
@@ -28,6 +30,7 @@
           subButton = document.getElementById('sub_btn'),
           getButton = document.getElementById('get_btn'),
           setButton = document.getElementById('set_btn'),
+          maxButton = document.getElementById('max_btn'),
           resButton = document.getElementById('res_btn');
 
       addButton.onclick = function() {
@@ -45,6 +48,11 @@
       setButton.onclick = function() {
         var value = document.getElementById('number_notification');
         titlenotifier.set(value.value);
+      };
+
+      maxButton.onclick = function() {
+        var value = document.getElementById('max_notification');
+        titlenotifier.max(value.value);
       };
 
       resButton.onclick = function() {

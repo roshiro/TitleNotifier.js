@@ -13,7 +13,8 @@
 ;(function() {
   var title = document.getElementsByTagName('title')[0],
       notificationTotal = 0,
-      patt = /^\(\d*\) /;
+      notificationMax = Number.MAX_VALUE,
+      patt = /^\(\d*\+?\) /;
 
   function updateTitle() {
     if(notificationTotal === 0) {
@@ -21,10 +22,16 @@
       return;
     }
 
+    notificationTotalstr = notificationTotal;
+
+    if(notificationTotal > notificationMax) {
+      notificationTotalstr = notificationMax + '+';
+    }
+
     if(patt.exec(title.text)) {
-      title.text = title.text.replace(patt, "("+ notificationTotal +") ");
+      title.text = title.text.replace(patt, "("+ notificationTotalstr +") ");
     } else {
-      title.text = "(" + notificationTotal + ") " + title.text;
+      title.text = "(" + notificationTotalstr + ") " + title.text;
     }
   };
 
@@ -101,6 +108,20 @@
      */
     get: function() {
       return notificationTotal;
+    },
+
+    /**
+     * Sets {value} to total.
+     *
+     * @param {value} Number to be set as total.
+     */
+    max: function(value) {
+      if(!isNumber(value) || value <= 0) {
+        return;
+      }
+
+      notificationMax = parseInt(value, 10);
+      updateTitle();
     },
 
   }
