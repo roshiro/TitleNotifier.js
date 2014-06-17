@@ -44,6 +44,21 @@ Call the following to set notifications to zero and the title to the original ve
 titlenotifier.reset();
 ```
 
+### Get Number of Notifications (NEW)
+
+Call the following to get the current number of notifications
+
+```javascript
+titlenotifier.get();
+```
+
+### Set Max Number of Notifications (NEW)
+
+Call the following to set maximum number of notifications to display. Once the maximum number is reached it displays the max number plus a plus sign. If you set the max to 99 and you have 100 notifications, it will show 99+ instead of 100.
+
+```javascript
+titlenotifier.max(99);
+```
 
 ## Contribute
 

@@ -17,8 +17,12 @@
       return document.getElementsByTagName('title')[0].text;
     }
 
+    function isNumber(n) {
+      return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
     function expectedTitle(number) {
-      if(number > 0) {
+      if(!isNumber(number) || number > 0) {
         return "("+ number +") TitleNotifier unit tests";
       } else {
         return "TitleNotifier unit tests";
@@ -63,6 +67,31 @@
         titlenotifier.reset();
         titlenotifier.set(5);
         t.assertEqual(getTitle(), expectedTitle(5));
+      },
+      testGetNotifications: function(t) {
+        titlenotifier.reset();
+        titlenotifier.set(5);
+        titlenotifier.sub(2);
+        titlenotifier.add();
+        t.assertEqual(titlenotifier.get(), 4);
+      },
+      testGetNotificationsEmpty: function(t) {
+        titlenotifier.reset();
+        t.assertEqual(titlenotifier.get(), 0);
+      },
+      testMaxNotifications: function(t) {
+        titlenotifier.reset();
+        titlenotifier.max(99);
+        titlenotifier.set(98);
+        titlenotifier.add();
+        titlenotifier.add();
+        t.assertEqual(getTitle(), expectedTitle('99+'));
+      },
+      testMaxNotificationsAfter: function(t) {
+        titlenotifier.reset();
+        titlenotifier.set(200);
+        titlenotifier.max(99);
+        t.assertEqual(getTitle(), expectedTitle('99+'));
       }
     });
   </script>
