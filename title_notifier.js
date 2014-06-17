@@ -104,7 +104,7 @@
     },
 
     /**
-     * Returns the value of notifications
+     * Returns the value of current notifications
      */
     get: function() {
       return notificationTotal;
