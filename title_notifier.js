@@ -142,7 +142,7 @@
 
       notificationMax = parseInt(value, 10);
       updateTitle();
-    },
+    }
 
   }
 
