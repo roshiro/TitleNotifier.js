@@ -15,8 +15,20 @@
       notificationTotal = 0,
       notificationMax = Number.MAX_VALUE,
       patt = /^\(\d*\+?\) /;
+	
+	
+  var display=false;
+  var tempTitle='';
+  var ticktock;
+  
+  function flashTitle(){
+  	title.text=display?tempTitle:title.text.replace(patt, "");
+  	display=!display;
+  }
+
 
   function updateTitle() {
+  	 window.clearInterval(ticktock);
     if(notificationTotal === 0) {
       title.text = title.text.replace(patt, "");
       return;
@@ -28,11 +40,19 @@
       notificationTotalstr = notificationMax + '+';
     }
 
+	
     if(patt.exec(title.text)) {
       title.text = title.text.replace(patt, "("+ notificationTotalstr +") ");
     } else {
       title.text = "(" + notificationTotalstr + ") " + title.text;
     }
+    
+   
+   
+  	tempTitle=title.text;
+   	ticktock=window.setInterval(flashTitle,500);
+    
+    
   };
 
   function isNumber(n) {
