@@ -8,7 +8,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "test/TitleNotifier.html"
+    "test": "gulp",
+    "build": "gulp",
+    "build-min": "gulp"
   },
   "repository": {
     "type": "git",
