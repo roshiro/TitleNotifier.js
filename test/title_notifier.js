@@ -1,20 +1,22 @@
 describe('TitleNotifier', () => {
 
-	document.title = 'TitleNotifier unit tests';
+  document.title = 'TitleNotifier unit tests';
 
-	var getTitle = () => {
-		return document.title;
-	}
+  var getTitle = () => {
+    return document.title;
+  }
 
-	var isNumber = (n) => {
-		return !isNaN(parseFloat(n)) && isFinite(n);
-	}
+  var isNumber = (n) => {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+  }
 
 	var expectedTitle = (number) => {
-		if(!isNumber(number) || number > 0)
+		if(!isNumber(number) || number > 0) {
 			return '(' + number + ') TitleNotifier unit tests';
-		else
+		}
+		else {
 			return 'TitleNotifier unit tests';
+		}
 	}
 
 	it('should reset', () => {
@@ -63,7 +65,7 @@ describe('TitleNotifier', () => {
 	});
 
 	it('should set with param', () => {
-		titlenotifier.reset();
+    titlenotifier.reset();
 		titlenotifier.set(30);
 		expect(getTitle()).toBe(expectedTitle(30));
 	});
@@ -79,7 +81,7 @@ describe('TitleNotifier', () => {
 		expect(titlenotifier.get()).toBe(0);
 	});
 
-	it('should set a max value', () => {
+  it('should set a max value', () => {
 		titlenotifier.reset();
         titlenotifier.max(99);
         titlenotifier.set(98);
