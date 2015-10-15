@@ -1,0 +1,32 @@
+{
+  "name": "titlenotifier.js",
+  "version": "1.0.0",
+  "description": "Lightweight (< 3kb), dependency-free javascript library to dynamically show the number of unread notifications in your webpage title.",
+  "main": "src/title_notifier.js",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "gulp",
+    "build": "gulp",
+    "build-min": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "roshiro/TitleNotifier.js"
+  },
+  "author": "Rafael Oshiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roshiro/TitleNotifier.js/issues"
+  },
+  "homepage": "https://github.com/roshiro/TitleNotifier.js#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jasmine-livereload-task": "^0.7.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.4.1"
+  }
+}
